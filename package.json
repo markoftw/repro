@@ -4,7 +4,11 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "test": "lerna version",
+    "confirm": "lerna version --yes"
+  },
   "devDependencies": {
-    "lerna": "^6.3.0"
+    "lerna": "^7.1.1"
   }
 }

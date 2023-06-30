@@ -1,5 +1,31 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "useWorkspaces": true,
-  "version": "0.0.0"
+  "version": "independent",
+  "packages": [
+    "packages/*"
+  ],
+  "changelogPreset": {
+    "name": "angular",
+    "types": [
+      {"type": "feat", "section": "Features"},
+      {"type": "fix", "section": "Bug Fixes"},
+      {"type": "chore", "hidden": true},
+      {"type": "docs", "hidden": true},
+      {"type": "style", "hidden": true},
+      {"type": "refactor", "hidden": true},
+      {"type": "perf", "hidden": true},
+      {"type": "test", "hidden": true}
+    ]
+  },
+  "command": {
+    "version": {
+      "conventionalCommits": true,
+      "message": "chore(release): version and release commit",
+      "allowBranch": ["main"],
+      "ignoreChanges": [
+        "**/*.md",
+        "**/*(\\.|-)test.ts"
+      ]
+    }
+  }
 }
